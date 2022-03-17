@@ -1,3 +1,2 @@
-
-$ cat requirements.txt
+cat requirements.txt
 Flask
