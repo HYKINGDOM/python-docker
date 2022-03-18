@@ -1,6 +1,6 @@
 
 # 使用官方提供的Python开发镜像作为基础镜像
-FROM python:2.7-slim
+FROM python:3.6
 
 # 将工作目录切换为/app
 WORKDIR /app
@@ -9,7 +9,7 @@ WORKDIR /app
 ADD . /app
 
 # 使用pip命令安装这个应用所需要的依赖
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 
 # 允许外界访问容器的80端口
 EXPOSE 80
