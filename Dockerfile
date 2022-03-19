@@ -1,13 +1,14 @@
 
 # 使用官方提供的Python开发镜像作为基础镜像
 FROM ubuntu:latest
-RUN apt-get update -yRUN apt-get install -y python-pip python-dev build-essential
 
 # 将工作目录切换为/app
 WORKDIR /app
 
 # 将当前目录下的所有内容复制到/app下
 ADD . /app
+
+RUN apt-get update -yRUN apt-get install -y python-pip python-dev build-essential
 
 RUN /usr/local/bin/python -m pip install --upgrade pip
 # 使用pip命令安装这个应用所需要的依赖
