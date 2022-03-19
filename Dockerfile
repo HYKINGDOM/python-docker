@@ -8,7 +8,8 @@ WORKDIR /app
 # 将当前目录下的所有内容复制到/app下
 ADD . /app
 
-RUN apt-get update -yRUN apt-get install -y python-pip python-dev build-essential \
+RUN apt-get update -y \
+    && apt-get install -y python-pip python-dev build-essential \
     && /usr/local/bin/python -m pip install --upgrade pip  \
     && pip3 install --trusted-host pypi.python.org -r requirements.txt
 
