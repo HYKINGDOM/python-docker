@@ -8,11 +8,9 @@ WORKDIR /app
 # 将当前目录下的所有内容复制到/app下
 ADD . /app
 
-RUN apt-get update -yRUN apt-get install -y python-pip python-dev build-essential
-
-RUN /usr/local/bin/python -m pip install --upgrade pip
-# 使用pip命令安装这个应用所需要的依赖
-RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
+RUN apt-get update -yRUN apt-get install -y python-pip python-dev build-essential \
+    && /usr/local/bin/python -m pip install --upgrade pip  \
+    && pip3 install --trusted-host pypi.python.org -r requirements.txt
 
 # 允许外界访问容器的80端口
 EXPOSE 80
