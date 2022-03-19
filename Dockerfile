@@ -1,6 +1,7 @@
 
 # 使用官方提供的Python开发镜像作为基础镜像
-FROM python:3.6
+FROM ubuntu:latest
+RUN apt-get update -yRUN apt-get install -y python-pip python-dev build-essential
 
 # 将工作目录切换为/app
 WORKDIR /app
