@@ -10,7 +10,7 @@ ADD . /app
 
 RUN apt-get update -y \
     && apt-get install -y python3-pip python-dev build-essential \
-    && /usr/local/bin/python -m pip3 install --upgrade pip  \
+    && pip3 install --upgrade pip  \
     && pip3 install --trusted-host pypi.python.org -r requirements.txt
 
 # 允许外界访问容器的80端口
